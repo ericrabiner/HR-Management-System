@@ -83,7 +83,7 @@ app.get("/images", (req, res) => {
 
 // setup route to listen on /employees
 app.get("/employees", (req, res) => {
-  if (req.query.status != undefined) {
+  if (req.query.status) {
     data_service.getEmployeesByStatus(req.query.status)
     .then((data) => {
       res.render("employees", {
@@ -97,7 +97,7 @@ app.get("/employees", (req, res) => {
     });
   }
 
-  else if (req.query.department != undefined) {
+  else if (req.query.department) {
     data_service.getEmployeesByDepartment(req.query.department)
     .then((data) => {
       res.render("employees", {
@@ -111,7 +111,7 @@ app.get("/employees", (req, res) => {
     });
   }
 
-  else if (req.query.manager != undefined) {
+  else if (req.query.manager) {
     data_service.getEmployeesByManager(req.query.manager)
     .then((data) => {
       res.render("employees", {
@@ -169,7 +169,6 @@ app.get("/employee/:empNum", function(req, res) {
 });
 
 app.post("/employee/update", (req, res) => {
-  console.log(req.body)
   data_service.updateEmployee(req.body)
   .then(() => {
     res.redirect("/employees");
