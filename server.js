@@ -58,19 +58,19 @@ app.engine(".hbs", exphbs({
 app.set("view engine", ".hbs");
 
 app.get("/", (req, res) => {
-  res.render("home.hbs");
+  res.render("home");
 })
 
 app.get("/about", (req, res) => {
-  res.render("about.hbs");
+  res.render("about");
 })
 
 app.get("/employees/add", (req, res) => {
-  res.render("addEmployee.hbs");
+  res.render("addEmployee");
 })
 
 app.get("/images/add", (req, res) => {
-  res.render("addImage.hbs");
+  res.render("addImage");
 })
 
 app.get("/images", (req, res) => {
