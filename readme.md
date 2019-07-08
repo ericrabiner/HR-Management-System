@@ -1,5 +1,5 @@
 # HR Management System
-An application written using Node.js, Express.js, Handlebars.js, PostgreSQL, and Bootstrap.
+An application written using Node.js, Express.js, Handlebars.js, MongoDB, and Bootstrap. This application can add, create, delete, and search a view of employees and departments.
 
 ## Prerequisites
 Install node.js.
