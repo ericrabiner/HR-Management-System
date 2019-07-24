@@ -4,7 +4,14 @@ An application written using Node.js, Express.js, Handlebars.js, MongoDB, and Bo
 ## Prerequisites
 Install node.js.
 
-Install the following dependencies.
+Install all dependencies
+```
+npm install
+```
+
+OR 
+
+Install the following dependencies manually.
 ```
 npm install express
 npm install --save express-handlebars
