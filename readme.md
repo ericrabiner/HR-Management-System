@@ -12,6 +12,9 @@ npm install body-parser --save
 npm install --save multer
 npm install sequelize --save
 npm install pg pg-hstore --save
+npm install mongoose --save
+npm install client-sessions --save
+npm install "bcryptjs" --save
 ```
 
 ## Running the Application

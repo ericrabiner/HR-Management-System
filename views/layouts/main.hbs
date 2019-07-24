@@ -7,7 +7,7 @@
       <!-- Latest compiled and minified Bootstrap 3.3.7 CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <link rel="stylesheet" type="text/css" href="/css/site.css">
-      <title>Home</title>
+      <title>WEB322</title>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -31,11 +31,29 @@
             {{!-- <li>{{#navLink "/employees/add"}}Add Employee{{/navLink}}</li> --}}
             {{!-- <li>{{#navLink "/images/add"}}Add Image{{/navLink}}</li> --}}
           </ul>
+          {{#if session.user}}
+          <form class="navbar-form navbar-right">
+            <div class="dropdown">
+              <button class="btn btn-primary dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;{{session.user.userName}}&nbsp;&nbsp;<span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="userMenu">
+                <li><a href="/userHistory">User History</a></li>
+                <li><a href="/logout">Log Out</a></li>
+              </ul>
+            </div>
+          </form>
           <ul class="nav navbar-nav navbar-right">
-            <li>{{#navLink "/images"}}Images{{/navLink}}</li>
-            <li>{{#navLink "/employees"}}Employees{{/navLink}}</li>
-            <li>{{#navLink "/departments"}}Departments{{/navLink}}</li>
+              {{#navLink "/images"}}Images{{/navLink}}
+              {{#navLink "/employees"}}Employees{{/navLink}}
+              {{#navLink "/departments"}}Departments{{/navLink}}
           </ul>
+          {{else}}
+          <form class="navbar-form navbar-right">
+            <a href="/register" class="btn btn-success"><span class="glyphicon glyphicon-cog"></span>&nbsp;&nbsp;Register</a>
+            <a href="/login" class="btn btn-primary"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;&nbsp;Log In</a>
+          </form>
+          {{/if}}
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
